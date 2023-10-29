@@ -6,6 +6,7 @@
 #include "Class.h"
 #include <iostream>
 #include <string>
+#include "Student.h"
 
 using namespace std;
 
@@ -52,4 +53,9 @@ void Classe::showClass(Classe class_to_show)
 {
     cout << "The class Code is: " << getClassCode() << endl;
     cout << "the class is on a: " << getDay() << " and it is a: " << getType() << ". It has a duration of: " << getDuration() << " and it starts at: " << getHour() << endl;
+}
+
+void Classe::addStudent(int studentCode)
+{
+    classStudents_.push_back(studentCode);
 }

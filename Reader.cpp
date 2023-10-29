@@ -35,6 +35,8 @@ Course read_1(const string& fileName, Course course) // funçao que le e process
                 {
                     Classe newClass = Classe(ClassCode); // adiciona a turma nova ao
                     course.getSubject(UcCode).addClass(newClass);
+
+
                 }
 
                 else
@@ -44,6 +46,7 @@ Course read_1(const string& fileName, Course course) // funçao que le e process
 
                     course.addSubject(newSubject); // estamos a adicionar um novo subject ao nosso curso
                     course.getSubject(UcCode).addClass(newClass);
+
                 }
             }
 
@@ -114,6 +117,7 @@ Course read_3(const string& fileName, Course course) // funçao que le e process
                 if(student.getStudentCode() == stoi(StudentCode))
                 {
                     course.getStudent(stoi(StudentCode)).getSchedule().addClass(course.getSubject(UcCode).getSubjectClass(ClassCode));
+                    course.getSubject(UcCode).getSubjectClass(ClassCode).addStudent(stoi(StudentCode)); // nao sei porque eque isto ainda nao esta a adicionar ao vetor
                 }
 
                 else
@@ -122,6 +126,7 @@ Course read_3(const string& fileName, Course course) // funçao que le e process
 
                     student.getSchedule().addClass(course.getSubject(UcCode).getSubjectClass(ClassCode));
                     course.addStudent(student);
+                    course.getSubject(UcCode).getSubjectClass(ClassCode).addStudent(stoi(StudentCode)); // nao sei porque e que isto ainda nao esta a aadicionar ao vertor
                 }
             }
 

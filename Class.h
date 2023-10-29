@@ -6,9 +6,11 @@
 #define UNTITLED_CLASS_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
+class Student;
 class Classe
 {
 private:
@@ -17,6 +19,8 @@ private:
     float hour_;
     float duration_;
     string type_;
+    vector<int> classStudents_;
+
 
 public:
     Classe();
@@ -28,6 +32,7 @@ public:
     int getDuration(void);
     string getType(void);
     void showClass(Classe class_to_show);
+    void addStudent(int studentCode);
 
 };
 

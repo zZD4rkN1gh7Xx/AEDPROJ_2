@@ -15,18 +15,9 @@ int main(void)
 
         Course course = Course();
 
-        string filePath_1;
-        string filePath_2;
-        string filePath_3;
-
-        cout << "Classes_per_uc.csb File path pls" << endl;
-        getline(cin, filePath_1);
-
-        cout << "Classes.csv File path pls" << endl;
-        getline(cin, filePath_2);
-
-        cout << "student_classes.csv File Path" << endl;
-        getline(cin, filePath_3);
+        string filePath_1 = "C:\\Users\\Asus\\CLionProjects\\untitled\\classes_per_uc.csv";
+        string filePath_2 = "C:\\Users\\Asus\\CLionProjects\\untitled\\classes.csv";
+        string filePath_3 = "C:\\Users\\Asus\\CLionProjects\\untitled\\students_classes.csv";
 
 
         course = read_3(filePath_3,read_2(filePath_2,read_1(filePath_1,course)));// o input do 1 ficheiro ja funciona :D
