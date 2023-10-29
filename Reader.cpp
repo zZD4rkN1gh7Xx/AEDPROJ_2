@@ -107,16 +107,19 @@ Course read_3(const string& fileName, Course course) // funçao que le e process
             string StudentCode, StudentName, UcCode, ClassCode;
             istringstream ss(line);
 
+            Student student;
+
             if(getline(ss,StudentCode,',') && getline(ss, StudentName,',') && getline(ss,UcCode, ',') && getline(ss, ClassCode))
             {
-                if(course.getAllStudents().count(stoi(StudentCode)) > 0)
+                if(student.getStudentCode() == stoi(StudentCode))
                 {
                     course.getStudent(stoi(StudentCode)).getSchedule().addClass(course.getSubject(UcCode).getSubjectClass(ClassCode));
                 }
 
                 else
                 {
-                    Student student = Student(stoi(StudentCode),StudentName);
+                    student = Student(stoi(StudentCode),StudentName);
+
                     student.getSchedule().addClass(course.getSubject(UcCode).getSubjectClass(ClassCode));
                     course.addStudent(student);
                 }
